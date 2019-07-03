@@ -56,8 +56,8 @@ class App extends Component {
   }
 }
 
-
 export default App;
+
 // render->return | props | map | prop-types | life-cycle | state
 
 // lifecycle : (1) componentWillMount() -> (2) render() -> (3) componentDidMount() 
