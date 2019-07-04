@@ -11,6 +11,7 @@ class App extends Component {
   }
 
   componentDidMount () {
+    /*
     setTimeout(() => {
       this.setState ({
         movies : [
@@ -37,6 +38,8 @@ class App extends Component {
         ]
       })
     }, 5000)
+    */
+   fetch('https://yts.lt/api/v2/list_movies.json?sort_by=download_count')
   }
 
   _renderMovies = () => {
@@ -45,8 +48,6 @@ class App extends Component {
     })
     return movies
   }
-
-
   render () {
     return (
       <div className="App"> 
@@ -58,7 +59,7 @@ class App extends Component {
 
 export default App;
 
-// render->return | props | map | prop-types | life-cycle | state
+// render() {} ->  return ()  | props | map | prop-types | life-cycle | state
 
 // lifecycle : (1) componentWillMount() -> (2) render() -> (3) componentDidMount() 
 // update : componentWillErceiveProps() -> shouldComponentUpdate() -> componentWillUpdate()
