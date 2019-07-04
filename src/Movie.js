@@ -1,6 +1,7 @@
 import React  from 'react';
 import PropTypes from 'prop-types';
 import './Movie.css';
+import LinesEllipsis from 'react-lines-ellipsis';
 
 function Movie ({title, poster, genres, synopsis}) {
     return (
@@ -14,14 +15,16 @@ function Movie ({title, poster, genres, synopsis}) {
                     {genres.map((genre,index) => <MovieGenre genre={genre} key={index} />)}
                 </div>
                 <p className="Movie__Synopsis"> 
-                    {synopsis}
+                    <LinesEllipsis text={synopsis} 
+                                   maxLine= '3' 
+                                   ellipsis = '...' 
+                                   trimRight 
+                                   basedOn = 'letters' />
                 </p>
             </div>
         </div>
     )
 }
- // <LinesEllipsis text={synopsis} maxLine= '3' ellipsis = '...' trimRight basedOn = 'letters' />
- // can not use lines-ellipse. I have to use yarn, not npm 
 
 function MoviePoster ({poster, alt}) {
     return (
