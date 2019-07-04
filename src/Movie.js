@@ -14,18 +14,14 @@ function Movie ({title, poster, genres, synopsis}) {
                     {genres.map((genre,index) => <MovieGenre genre={genre} key={index} />)}
                 </div>
                 <p className="Movie__Synopsis"> 
-                    <LinesEllipsis 
-                        text={synopsis}
-                        maxLine= '3'
-                        ellipsis = '...'
-                        trimRight
-                        basedOn = 'letters'
-                    />
+                    {synopsis}
                 </p>
             </div>
         </div>
     )
 }
+ // <LinesEllipsis text={synopsis} maxLine= '3' ellipsis = '...' trimRight basedOn = 'letters' />
+ // can not use lines-ellipse. I have to use yarn, not npm 
 
 function MoviePoster ({poster, alt}) {
     return (
